@@ -1,0 +1,28 @@
+GET http://localhost:3003/employees/view
+###
+GET http://localhost:3003/employees/view/62a1f944747901627704ebb9
+###
+POST http://localhost:3003/employees/add
+Content-Type: application/json
+
+{
+    "name":"Donald",
+    "age":34,   
+    "hobby":"Sports"
+}
+###
+PATCH http://localhost:3003/employees/update/682f0eaf363b74a1c9f36965
+Content-Type: application/json
+
+{
+    "name":"Donald",
+    "age":34,   
+    "hobby":"Sports"
+}
+###
+PUT http://localhost:3003/employees/update/682f0eaf363b74a1c9f36965 
+
+###
+DELETE http://localhost:3003/employees/delete/682f0eaf363b74a1c9f36965
+###
+
