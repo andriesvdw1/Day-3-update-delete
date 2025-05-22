@@ -70,6 +70,8 @@ usersRouter.patch("/update/:id", async (req, res) => {
     console.log("Successfully updated employee");
   } catch (error) {
     res.status(500).json({ message: "A server error occurred." });
+  } finally{
+    console.log("A PATCH method was executed for an employee.");
   }
 });
 
@@ -84,10 +86,12 @@ usersRouter.put('/update/:id', async (req, res) => {
     if (!result) {
       res.status(404).send({ message: 'Employee not found' });
     } else {
-      res.send({ message: 'Employee updated successfully', result });
+      res.status(201).send({ message: 'Employee updated successfully', result });
     }
   } catch (error) {
     res.status(500).send({ message: 'Server error:', error });
+  } finally{
+    console.log("A PUT method was executed for an employee.");
   }
 });
 
