@@ -20,7 +20,14 @@ Content-Type: application/json
     "hobby":"gaming"
 }
 ###
-PUT http://localhost:3003/employees/update/682f0eaf363b74a1c9f36965 
+PUT http://localhost:3003/employees/update/682cbb7ebf27ea81a36c4bd0
+Content-Type: application/json
+
+{
+    "name":"George",
+    "age": 29,
+    "hobby":"reading"
+}
 
 ###
 DELETE http://localhost:3003/employees/delete/682f0eaf363b74a1c9f36965
