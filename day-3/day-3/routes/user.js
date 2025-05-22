@@ -57,6 +57,21 @@ usersRouter.delete("/delete/:id", async (req, res) => {
   res.status(200).json(results);
 });
 
+//New patch method
+usersRouter.patch("/patch/:id", async (req, res) => {
+  let requestedId = req.params.id;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(
+      requestedId,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ message: "A server error occurred." });
+  }
+});
+
 usersRouter.post("/add", async (req, res) => {
   let { name, age, hobby } = req.body; // we will use destructuring to extract the values from the request body
   // generate your emplyee id
