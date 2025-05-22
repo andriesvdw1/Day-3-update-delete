@@ -11,13 +11,13 @@ Content-Type: application/json
     "hobby":"Sports"
 }
 ###
-PATCH http://localhost:3003/employees/update/682f0eaf363b74a1c9f36965
+PATCH http://localhost:3003/employees/update/682cbc27bf27ea81a36c4bd1
 Content-Type: application/json
 
 {
-    "name":"Donald",
-    "age":34,   
-    "hobby":"Sports"
+    "name":"Robert",
+    "age":38,   
+    "hobby":"gaming"
 }
 ###
 PUT http://localhost:3003/employees/update/682f0eaf363b74a1c9f36965 

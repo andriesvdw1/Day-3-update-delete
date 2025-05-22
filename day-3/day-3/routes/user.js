@@ -58,7 +58,7 @@ usersRouter.delete("/delete/:id", async (req, res) => {
 });
 
 //New patch method
-usersRouter.patch("/patch/:id", async (req, res) => {
+usersRouter.patch("/update/:id", async (req, res) => {
   let requestedId = req.params.id;
   try {
     const updatedUser = await User.findByIdAndUpdate(
