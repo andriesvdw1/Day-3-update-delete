@@ -67,8 +67,27 @@ usersRouter.patch("/update/:id", async (req, res) => {
       { new: true }
     );
     res.status(200).json(updatedUser);
+    console.log("Successfully updated employee");
   } catch (error) {
     res.status(500).json({ message: "A server error occurred." });
+  }
+});
+
+//New put method
+usersRouter.put('/update/:id', async (req, res) => {
+  try {
+    const id = req.params.id;
+    const newEmployeeVersion = req.body;
+
+    const result = await User.findByIdAndUpdate(id, newEmployeeVersion, { new: true });
+
+    if (!result) {
+      res.status(404).send({ message: 'Employee not found' });
+    } else {
+      res.send({ message: 'Employee updated successfully', result });
+    }
+  } catch (error) {
+    res.status(500).send({ message: 'Server error:', error });
   }
 });
 
