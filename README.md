@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/81acfc86-572a-43d2-b9b6-9ab443facd92)
+
 ### Response after running a PATCH method on an employee user:
 ```
 HTTP/1.1 200 OK
